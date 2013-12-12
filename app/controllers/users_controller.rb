@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     if user.admin?
-      flash[:error] = "Cannot delete a admin user."
+      flash[:danger] = "Cannot delete a admin user."
     else
       user.destroy
       flash[:success] = "User deleted."
